@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Processing...</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial;
+      background: linear-gradient(135deg, #5b7bff, #00c6ff);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      text-align: center;
+    }
+
+    .loader {
+      width: 60px;
+      height: 60px;
+      border: 6px solid rgba(255,255,255,0.5);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    h2 { font-size: 22px; }
+  </style>
+</head>
+
+<body>
+
+<div class="loader"></div>
+<h2>Processing your payment...</h2>
+
+<script>
+  const qs = window.location.search;
+  setTimeout(() => {
+    window.location.href = "success.html" + qs;
+  }, 3000);
+</script>
+
+</body>
+</html>
